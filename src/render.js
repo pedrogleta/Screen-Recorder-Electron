@@ -7,6 +7,8 @@ videoSelectBtn.onclick = getVideoSources
 const { desktopCapturer, remote } = require('electron')
 const { dialog, Menu } = remote
 
+Menu.setApplicationMenu(null)
+
 async function getVideoSources() {
   const inputSources = await desktopCapturer.getSources({
     types: ['window', 'screen']
